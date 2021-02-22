@@ -58,6 +58,7 @@ fn value_in_cents(coin: Coin) -> u8 {
 }
 
 
+
 fn main() {
     
     // test enum
@@ -90,4 +91,17 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1, 100);
     println!("example of randomize function: {}", secret_number);
+
+    println!("======== Recursive Function Test =========\n");
+
+    fn factorial(n:i32, acc: i32) -> i32 {
+        match n {
+            1 => acc,
+            _ => return factorial(n - 1, acc * n)
+        }
+    }
+    let n = 10;
+    println!("factorial of {} is {}\n", n, factorial(n, 1));
+    
+    println!("===========================================\n");
 }
